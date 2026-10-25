@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>Settings | CampusHub</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">CampusHub</div>
+        <nav class="nav"><a class="" href="index.html">Dashboard</a><a class="" href="courses.html">Courses</a><a class="" href="schedule.html">Schedule</a><a class="" href="attendance.html">Attendance</a><a class="" href="grades.html">Grades</a><a class="" href="assignments.html">Assignments</a><a class="" href="messages.html">Messages</a><a class="active" href="settings.html">Settings</a></nav>
+        <div class="sidebar-foot">v0.1 skeleton</div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div class="page-name">Settings</div>
+          <div class="user">
+            <span>Bhavya Chhachheya</span>
+            <div class="avatar">BC</div>
+          </div>
+        </header>
+        <div class="content">
+          <div class="page-heading">
+            <div>
+              <h1>Settings</h1>
+              <div class="subtitle">Manage your profile, preferences, and account security.</div>
+            </div>
+            <div class="toolbar"></div>
+          </div>
+          <div class="settings-layout">
+            <aside class="panel settings-nav"><a class="active" href="#profile">Profile</a><a href="#subjects-section">Subjects</a><a href="#schedule-section">Schedule</a><a href="#preferences">Preferences</a><a href="#notifications">Notifications</a><a href="#security">Security</a><a href="#data-section">Data</a></aside>
+            <div class="grid">
+              <section class="panel" id="profile">
+                <div class="panel-head"><h2>Profile information</h2><span class="muted">Student account</span></div>
+                <div class="grid grid-2">
+                  <div class="field"><label for="p-name">Full name</label><input data-profile="name" id="p-name"></div>
+                  <div class="field"><label for="p-email">College email</label><input data-profile="email" id="p-email" type="email"></div>
+                  <div class="field"><label for="p-id">Student ID</label><input data-profile="id" id="p-id"></div>
+                  <div class="field"><label for="p-program">Program</label><input data-profile="program" id="p-program"></div>
+                </div>
+                <button class="btn primary" id="save-profile" type="button">Save changes</button>
+              </section>
+              <section class="panel" id="subjects-section">
+                <div class="panel-head">
+                  <div>
+                    <h2>Subjects</h2>
+                    <div class="subtitle">Subjects are added when a teacher enrolls you. You can update your progress here.</div>
+                  </div>
+                  <button class="btn primary" id="add-subject" type="button">＋ Add subject</button>
+                </div>
+                <div class="table-wrap" id="subjects-editor"></div>
+              </section>
+              <section class="panel" id="schedule-section">
+                <div class="panel-head">
+                  <div>
+                    <h2>Weekly schedule</h2>
+                    <div class="subtitle">Edit your timetable. Overlapping classes on the same day are blocked.</div>
+                  </div>
+                  <button class="btn primary" id="add-class" type="button">＋ Add class</button>
+                </div>
+                <div class="table-wrap" id="schedule-editor"></div>
+              </section>
+              <section class="panel" id="preferences">
+                <div class="panel-head"><h2>Preferences</h2></div>
+                <div class="setting-row">
+                  <div>
+                    <div class="list-title">Appearance</div>
+                    <div class="list-sub">Use the standard light interface.</div>
+                  </div>
+                  <select style="width:145px">
+                    <option>Light</option>
+                    <option>Dark</option>
+                    <option>System default</option>
+                  </select>
+                </div>
+                <div class="setting-row">
+                  <div>
+                    <div class="list-title">Language</div>
+                    <div class="list-sub">Choose your preferred display language.</div>
+                  </div>
+                  <select style="width:145px">
+                    <option>English</option>
+                    <option>Hindi</option>
+                  </select>
+                </div>
+                <div class="setting-row">
+                  <div>
+                    <div class="list-title">Time format</div>
+                    <div class="list-sub">Choose how class times are displayed.</div>
+                  </div>
+                  <select aria-label="Time format" data-pref="time" style="width:145px">
+                    <option>12-hour</option>
+                    <option>24-hour</option>
+                  </select>
+                </div>
+              </section>
+              <section class="panel" id="notifications">
+                <div class="panel-head"><h2>Notifications</h2></div>
+                <div class="setting-row">
+                  <div>
+                    <div class="list-title">Assignment reminders</div>
+                    <div class="list-sub">Get notified before a deadline.</div>
+                  </div>
+                  <button aria-checked="true" aria-label="Assignment reminders" class="switch" data-notify="a" role="switch" type="button"></button>
+                </div>
+                <div class="setting-row">
+                  <div>
+                    <div class="list-title">Grade updates</div>
+                    <div class="list-sub">Be notified when new grades are published.</div>
+                  </div>
+                  <button aria-checked="true" aria-label="Grade updates" class="switch" data-notify="g" role="switch" type="button"></button>
+                </div>
+                <div class="setting-row">
+                  <div>
+                    <div class="list-title">Campus announcements</div>
+                    <div class="list-sub">Receive important campus news.</div>
+                  </div>
+                  <button aria-checked="true" aria-label="Campus announcements" class="switch" data-notify="c" role="switch" type="button"></button>
+                </div>
+              </section>
+              <section class="panel" id="security">
+                <div class="panel-head"><h2>Security</h2></div>
+                <div class="setting-row">
+                  <div>
+                    <div class="list-title">Password</div>
+                    <div class="list-sub">Last updated: not available in demo.</div>
+                  </div>
+                  <button class="btn" type="button">Change password</button>
+                </div>
+                <div class="setting-row">
+                  <div>
+                    <div class="list-title">Sign-in verification</div>
+                    <div class="list-sub">Add another layer of protection to your account.</div>
+                  </div>
+                  <span class="badge amber">Not enabled</span>
+                </div>
+              </section>
+              <section class="panel" id="data-section">
+                <div class="panel-head"><h2>Data</h2></div>
+                <div class="setting-row">
+                  <div>
+                    <div class="list-title">Reset to sample data</div>
+                    <div class="list-sub">Clears your timetable and resets preferences. Enrolled subjects stay.</div>
+                  </div>
+                  <button class="btn danger" id="reset-data" type="button">Reset data</button>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="subtitle" style="margin-top:15px">Profile, subjects, schedule and preferences are saved in this browser. Password and sign-in controls are visual only.</div>
+        </div>
+      </main>
+    </div>
+    <script defer src="api.js"></script>
+    <script defer src="app.js"></script>
+  </body>
+</html>

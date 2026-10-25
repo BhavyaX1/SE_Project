@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>Courses & Students | CampusHub</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="attendance.css" rel="stylesheet">
+  </head>
+  <body data-page="courses">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">CampusHub</div>
+        <nav class="nav" id="nav"></nav>
+        <div class="sidebar-foot">Teacher portal</div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div class="page-name">Courses & Students</div>
+          <div class="user">
+            <span></span>
+            <div class="avatar"></div>
+          </div>
+        </header>
+        <div class="content">
+          <div class="page-heading">
+            <div>
+              <h1>Courses &amp; Students</h1>
+              <div class="subtitle">Create your courses, then enroll students using the username they registered with.</div>
+            </div>
+            <div class="toolbar"><button class="btn primary" id="add-course" type="button">＋ Add course</button></div>
+          </div>
+          <section class="panel">
+            <div class="panel-head"><h2>My courses</h2></div>
+            <div class="table-wrap" id="course-table"></div>
+          </section>
+          <section class="panel" id="roster-panel" style="margin-top:18px" hidden>
+            <div class="panel-head"><h2 id="roster-title">Students</h2></div>
+            <div class="field">
+              <label for="usernames">Enroll students (usernames, separated by commas or spaces)</label>
+              <div class="inline"><input id="usernames" placeholder="asha, ravi, meena" style="width:min(380px,100%)"><button class="btn primary" id="enroll" type="button">Enroll</button></div>
+              <div class="form-error" id="enroll-msg" style="margin-top:8px"></div>
+            </div>
+            <div id="roster"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script defer src="api.js"></script>
+    <script defer src="teacher.js"></script>
+  </body>
+</html>

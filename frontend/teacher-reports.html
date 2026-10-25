@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>Reports | CampusHub</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="attendance.css" rel="stylesheet">
+  </head>
+  <body data-page="reports">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">CampusHub</div>
+        <nav class="nav" id="nav"></nav>
+        <div class="sidebar-foot">Teacher portal</div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div class="page-name">Reports</div>
+          <div class="user">
+            <span></span>
+            <div class="avatar"></div>
+          </div>
+        </header>
+        <div class="content">
+          <div class="page-heading">
+            <div>
+              <h1>Attendance Reports</h1>
+              <div class="subtitle">See every student's attendance per course and export it.</div>
+            </div>
+            <div class="toolbar"><button class="btn" id="csv" type="button">Export CSV</button></div>
+          </div>
+          <section class="panel">
+            <div class="inline" style="margin-bottom:16px">
+              <select id="course" aria-label="Course"></select>
+              <label style="margin:0">Minimum % <input id="thr" type="number" min="1" max="100" value="75" style="width:80px"></label>
+              <label style="margin:0"><input id="lowOnly" type="checkbox" style="width:auto"> Only students below minimum</label>
+              <input class="search" id="q" type="search" placeholder="Search student...">
+            </div>
+            <div class="counts" id="summary" style="margin-bottom:12px"></div>
+            <div class="table-wrap" id="report"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script defer src="api.js"></script>
+    <script defer src="teacher.js"></script>
+  </body>
+</html>

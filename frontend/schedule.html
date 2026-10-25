@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>Schedule | CampusHub</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">CampusHub</div>
+        <nav class="nav"><a class="" href="index.html">Dashboard</a><a class="" href="courses.html">Courses</a><a class="active" href="schedule.html">Schedule</a><a class="" href="attendance.html">Attendance</a><a class="" href="grades.html">Grades</a><a class="" href="assignments.html">Assignments</a><a class="" href="messages.html">Messages</a><a class="" href="settings.html">Settings</a></nav>
+        <div class="sidebar-foot">v0.1 skeleton</div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div class="page-name">Schedule</div>
+          <div class="user">
+            <span>Bhavya Chhachheya</span>
+            <div class="avatar">BC</div>
+          </div>
+        </header>
+        <div class="content">
+          <div class="page-heading">
+            <div>
+              <h1>Schedule</h1>
+              <div class="subtitle">Your weekly timetable and upcoming academic events.</div>
+            </div>
+            <div class="toolbar"><a class="btn" href="assignments.html">View deadlines</a><a class="btn primary" href="settings.html#schedule-section">Edit schedule</a></div>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-value" data-stat="classes">18</div>
+              <div class="stat-label">Classes this week</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value" data-stat="hours">24 hrs</div>
+              <div class="stat-label">Scheduled learning</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">3</div>
+              <div class="stat-label">Upcoming deadlines</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">2</div>
+              <div class="stat-label">Free afternoons</div>
+            </div>
+          </div>
+          <div class="grid grid-2">
+            <section class="panel">
+              <div class="panel-head"><h2 data-today-title="">Wednesday, October 21</h2><span class="badge blue">Today</span></div>
+              <div data-render="today" data-variant="full"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h2>Upcoming</h2><a class="link" href="assignments.html">See deadlines</a></div>
+              <div class="list">
+                <div class="list-item">
+                  <div>
+                    <div class="list-title">DSA problem set 4</div>
+                    <div class="list-sub">Assignment · Due Oct 22</div>
+                  </div>
+                  <span class="badge amber">Tomorrow</span>
+                </div>
+                <div class="list-item">
+                  <div>
+                    <div class="list-title">Physics lab report</div>
+                    <div class="list-sub">Lab report · Due Oct 24</div>
+                  </div>
+                  <span class="badge blue">3 days</span>
+                </div>
+                <div class="list-item">
+                  <div>
+                    <div class="list-title">Group project proposal</div>
+                    <div class="list-sub">Project · Due Oct 26</div>
+                  </div>
+                  <span class="badge blue">5 days</span>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="panel" style="margin-top:18px">
+            <div class="panel-head"><h2>Weekly overview</h2><span class="muted">Monday – Friday</span></div>
+            <div class="table-wrap" data-render="week"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script defer src="api.js"></script>
+    <script defer src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>Dashboard | CampusHub</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">CampusHub</div>
+        <nav class="nav">
+          <a class="active" href="index.html">Dashboard</a>
+          <a class="" href="courses.html">Courses</a>
+          <a class="" href="schedule.html">Schedule</a>
+          <a class="" href="attendance.html">Attendance</a>
+          <a class="" href="assignments.html">Assignments</a>
+          <a class="" href="messages.html">Messages</a>
+          <a class="" href="settings.html">Settings</a>
+        </nav>
+        <div class="sidebar-foot">v0.1 skeleton</div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div class="page-name">Dashboard</div>
+          <div class="user">
+            <span>Bhavya Chhachheya</span>
+            <div class="avatar">BC</div>
+          </div>
+        </header>
+        <div class="content">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-value">8.7</div>
+              <div class="stat-label">Current GPA</div>          
+            </div>
+            <div class="stat">
+              <div class="stat-value">86</div>
+              <div class="stat-label">Credits Completed</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value" data-attendance-stat>92%</div>
+              <div class="stat-label">Attendance</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">4</div>
+              <div class="stat-label">Pending Assignments</div>
+            </div>
+          </div>
+          <div class="grid grid-2">
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Today's Schedule</h2>
+                <a class="link" href="schedule.html">View full timetable</a>
+              </div>
+              <div class="list" data-render="today" data-variant="dash"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Assignments Due</h2>
+                <a class="link" href="assignments.html">View all</a>
+              </div>
+              <div class="list">
+                <div class="list-item">
+                  <div>
+                    <div class="list-title">Submit DSA problem set 4</div>
+                    <div class="list-sub">Due tomorrow</div>
+                  </div>
+                  <span class="badge amber">Pending</span>
+                </div>
+                <div class="list-item">
+                  <div>
+                    <div class="list-title">Physics lab report</div>
+                    <div class="list-sub">Due in 3 days</div>
+                  </div>
+                  <span class="badge blue">In progress</span>
+                </div>
+                <div class="list-item">
+                  <div>
+                    <div class="list-title">Group project proposal</div>
+                    <div class="list-sub">Due in 5 days</div>
+                  </div>
+                  <span class="badge amber">Pending</span>
+                </div>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Recent Grades</h2>
+                <a class="link" href="grades.html">View transcript</a>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Course</th>
+                      <th>Assessment</th>
+                      <th>Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Data Structures</td>
+                      <td>Midterm</td>
+                      <td>88/100</td>
+                    </tr>
+                    <tr>
+                      <td>Software Engineering</td>
+                      <td>Quiz 3</td>
+                      <td>19/20</td>
+                    </tr>
+                    <tr>
+                      <td>Machine Learning</td>
+                      <td>Lab Report 2</td>
+                      <td>45/50</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Announcements</h2>
+                <a class="link" href="messages.html">View all</a>
+              </div>
+              <div class="list">
+                <div class="list-item">
+                  <div>
+                    <div class="list-title">
+                      Registration for next semester opens Monday.
+                    </div>
+                    <div class="list-sub">Registrar's Office · 2h ago</div>
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div>
+                    <div class="list-title">
+                      Guest lecture on distributed systems, Friday 5 PM.
+                    </div>
+                    <div class="list-sub">CS Department · 1d ago</div>
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div>
+                    <div class="list-title">
+                      Library extended hours during finals week.
+                    </div>
+                    <div class="list-sub">Campus Library · 2d ago</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script defer src="api.js"></script>
+    <script defer src="app.js"></script>
+    <script defer src="attendance.js"></script>
+  </body>
+</html>
