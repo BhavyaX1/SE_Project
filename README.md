@@ -222,7 +222,6 @@ New installations have no preloaded users, courses, or attendance records. Creat
 | `POST /api/register/` | Create a student or teacher account |
 | `POST /api/login/` | Get an authentication token |
 | `GET/PATCH /api/profile/` | Read/update profile |
-| `POST /api/change-password/` | Change an account password |
 | `/api/subjects/` | Student enrolled subjects and progress |
 | `/api/classes/` | Student timetable |
 | `/api/courses/` | Teacher-managed courses |
