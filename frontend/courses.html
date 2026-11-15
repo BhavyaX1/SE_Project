@@ -1,46 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width,initial-scale=1" name="viewport">
-    <title>Courses | CampusHub</title>
-    <link href="style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="app">
-      <aside class="sidebar">
-        <div class="brand">CampusHub</div>
-        <nav class="nav"><a class="" href="index.html">Dashboard</a><a class="active" href="courses.html">Courses</a><a class="" href="schedule.html">Schedule</a><a class="" href="attendance.html">Attendance</a><a class="" href="grades.html">Grades</a><a class="" href="assignments.html">Assignments</a><a class="" href="messages.html">Messages</a><a class="" href="settings.html">Settings</a></nav>
-        <div class="sidebar-foot">v0.1 skeleton</div>
-      </aside>
-      <main class="main">
-        <header class="topbar">
-          <div class="page-name">Courses</div>
-          <div class="user">
-            <span>Bhavya Chhachheya</span>
-            <div class="avatar">BC</div>
-          </div>
-        </header>
-        <div class="content">
-          <div class="page-heading">
-            <div>
-              <h1>My Courses</h1>
-              <div class="subtitle">Your enrolled courses for the current semester.</div>
-            </div>
-            <div class="toolbar"><a class="btn" href="schedule.html">View schedule</a><a class="btn primary" href="settings.html#subjects-section">Edit subjects</a></div>
-          </div>
-          <div class="toolbar" style="justify-content:space-between;margin-bottom:18px">
-            <input aria-label="Search courses" class="search" data-filter=".course-card" placeholder="Search courses..." type="search">
-            <select style="width:auto">
-              <option>Current semester</option>
-              <option>Previous semester</option>
-            </select>
-          </div>
-          <div class="grid grid-3" data-render="courses"></div>
-        </div>
-      </main>
-    </div>
-    <script defer src="api.js"></script>
-    <script defer src="app.js"></script>
-  </body>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Courses | CampusHub</title>
+<link href="style.css?v=3" rel="stylesheet"/>
+<script src="theme.js?v=5"></script></head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar"></aside>
+<main class="main">
+<header class="topbar">
+<div class="page-name">Courses</div>
+<div class="user">
+<span></span>
+<div class="avatar"></div>
+</div>
+</header>
+<div class="content">
+<div class="page-heading">
+<div>
+<h1>My Courses</h1>
+<div class="subtitle">Your enrolled courses for the current semester.</div>
+</div>
+<div class="toolbar"><a class="btn" href="schedule.html">View schedule</a><a class="btn primary" href="settings.html#subjects-section">Edit subjects</a></div>
+</div>
+<div class="toolbar" style="justify-content:space-between;margin-bottom:18px">
+<input aria-label="Search courses" class="search" data-filter=".course-card" placeholder="Search courses..." type="search"/>
+
+</div>
+<div class="grid grid-3" data-render="courses"></div>
+</div>
+</main>
+</div>
+<script defer="" src="sidebar.js?v=3"></script><script defer="" src="avatar.js?v=3"></script><script defer="" src="api.js?v=5"></script>
+<script defer="" src="app.js?v=3"></script>
+</body>
 </html>
+

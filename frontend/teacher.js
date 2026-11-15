@@ -39,11 +39,8 @@
   const err = r => showError(errorText(r.data));
 
   function chrome() {
-    $('#nav').innerHTML = PAGES.map(p =>
-      `<a class="${p[0] === page ? 'active' : ''}" href="${p[1]}">${p[2]}</a>`).join('');
     const name = localStorage.getItem('name') || 'Teacher';
-    $('.user span').textContent = name;
-    $('.user .avatar').textContent = name.split(/\s+/).filter(Boolean).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+    if (window.CampusAvatar) CampusAvatar.render(name);
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'btn small'; b.textContent = 'Log out'; b.onclick = logout;
     $('.user').appendChild(b);

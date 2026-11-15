@@ -1,54 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width,initial-scale=1" name="viewport">
-    <title>Dashboard | CampusHub</title>
-    <link href="style.css" rel="stylesheet">
-    <link href="attendance.css" rel="stylesheet">
-  </head>
-  <body data-page="dashboard">
-    <div class="app">
-      <aside class="sidebar">
-        <div class="brand">CampusHub</div>
-        <nav class="nav" id="nav"></nav>
-        <div class="sidebar-foot">Teacher portal</div>
-      </aside>
-      <main class="main">
-        <header class="topbar">
-          <div class="page-name">Dashboard</div>
-          <div class="user">
-            <span></span>
-            <div class="avatar"></div>
-          </div>
-        </header>
-        <div class="content">
-          <div class="page-heading">
-            <div>
-              <h1>Teacher Dashboard</h1>
-              <div class="subtitle" data-today></div>
-            </div>
-            <div class="toolbar"><a class="btn" href="teacher-reports.html">Reports</a><a class="btn primary" href="teacher-attendance.html">Mark attendance</a></div>
-          </div>
-          <div class="stats" id="stats"></div>
-          <div class="grid grid-2">
-            <section class="panel">
-              <div class="panel-head"><h2>Today's attendance</h2><a class="link" href="teacher-attendance.html">Open marking</a></div>
-              <div class="list" id="today"></div>
-            </section>
-            <section class="panel">
-              <div class="panel-head"><h2>Low attendance</h2><span class="muted">Below 75%</span></div>
-              <div class="list" id="low"></div>
-            </section>
-          </div>
-          <section class="panel" style="margin-top:18px">
-            <div class="panel-head"><h2>My courses</h2><a class="link" href="teacher-courses.html">Manage courses</a></div>
-            <div class="table-wrap" id="courses"></div>
-          </section>
-        </div>
-      </main>
-    </div>
-    <script defer src="api.js"></script>
-    <script defer src="teacher.js"></script>
-  </body>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Dashboard | CampusHub</title>
+<link href="style.css?v=3" rel="stylesheet"/>
+<link href="attendance.css?v=3" rel="stylesheet"/>
+<script src="theme.js?v=5"></script></head>
+<body data-page="dashboard">
+<div class="app">
+<aside class="sidebar" id="sidebar"></aside>
+<main class="main">
+<header class="topbar">
+<div class="page-name">Dashboard</div>
+<div class="user">
+<span></span>
+<div class="avatar"></div>
+</div>
+</header>
+<div class="content">
+<div class="page-heading">
+<div>
+<h1>Teacher Dashboard</h1>
+<div class="subtitle" data-today=""></div>
+</div>
+<div class="toolbar"><a class="btn" href="teacher-reports.html">Reports</a><a class="btn primary" href="teacher-attendance.html">Mark attendance</a></div>
+</div>
+<div class="stats" id="stats"></div>
+<div class="grid grid-2">
+<section class="panel">
+<div class="panel-head"><h2>Today's attendance</h2><a class="link" href="teacher-attendance.html">Open marking</a></div>
+<div class="list" id="today"></div>
+</section>
+<section class="panel">
+<div class="panel-head"><h2>Low attendance</h2><span class="muted">Below 75%</span></div>
+<div class="list" id="low"></div>
+</section>
+</div>
+<section class="panel" style="margin-top:18px">
+<div class="panel-head"><h2>My courses</h2><a class="link" href="teacher-courses.html">Manage courses</a></div>
+<div class="table-wrap" id="courses"></div>
+</section>
+</div>
+</main>
+</div>
+<script defer="" src="sidebar.js?v=3"></script><script defer="" src="avatar.js?v=3"></script><script defer="" src="api.js?v=5"></script>
+<script defer="" src="teacher.js?v=3"></script>
+</body>
 </html>
+

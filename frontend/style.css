@@ -670,3 +670,67 @@ dialog.modal h2 {
   min-height: 0;
   margin: 0;
 }
+
+/* Responsive stat cards: 1 to 4 real cards without empty columns. */
+.stats { grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); }
+
+/* Accessible account avatar – initials are filled by avatar.js. */
+.avatar { font-weight: 600; text-transform: uppercase; }
+
+/* Dark theme; component colors use existing CSS variables wherever possible. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --navy: #0b1220;
+  --navy2: #334155;
+  --page: #111827;
+  --white: #1f2937;
+  --border: #3b4658;
+  --text: #f3f4f6;
+  --muted: #b5c0d0;
+  --line: #374151;
+}
+html[data-theme="dark"] .topbar,
+html[data-theme="dark"] .panel,
+html[data-theme="dark"] .stat,
+html[data-theme="dark"] dialog.modal,
+html[data-theme="dark"] .btn:not(.primary) {
+  background: var(--white);
+  color: var(--text);
+  border-color: var(--border);
+}
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+  background: #273449;
+  color: var(--text);
+  border-color: #53637b;
+}
+html[data-theme="dark"] .avatar { background: #45566f; color: white; }
+html[data-theme="dark"] .settings-nav a { color: var(--text); }
+html[data-theme="dark"] .settings-nav a.active,
+html[data-theme="dark"] .settings-nav a:hover { background: #334155; color: white; }
+html[data-theme="dark"] .progress { background: #374151; }
+html[data-theme="dark"] .seg button:not(.on) { background: #273449; color: #f3f4f6; }
+
+/* Extra dark-theme coverage for fixed-color components. */
+html[data-theme="dark"] body { background-color: var(--page); color: var(--text); }
+html[data-theme="dark"] .topbar,
+html[data-theme="dark"] .panel,
+html[data-theme="dark"] .stat,
+html[data-theme="dark"] .btn:not(.primary),
+html[data-theme="dark"] .seg button:not(.on),
+html[data-theme="dark"] dialog.modal,
+html[data-theme="dark"] .message-avatar { background-color: var(--white); color: var(--text); }
+html[data-theme="dark"] .field label,
+html[data-theme="dark"] label,
+html[data-theme="dark"] .settings-nav a,
+html[data-theme="dark"] .page-name { color: var(--text); }
+html[data-theme="dark"] .settings-nav a.active,
+html[data-theme="dark"] .settings-nav a:hover { background: #34445d; color: #fff; }
+html[data-theme="dark"] .toolbar .btn:not(.primary) { background-color: #29364a; }
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea { background-color: #253247; color: #f3f4f6; border-color: #516079; }
+html[data-theme="dark"] .avatar { background: #475569; color: white; }
+html[data-theme="dark"] .progress { background: #374151; }
+html[data-theme="dark"] .badge.blue { background: #263a58; color: #dce9ff; }

@@ -1,53 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width,initial-scale=1" name="viewport">
-    <title>Mark Attendance | CampusHub</title>
-    <link href="style.css" rel="stylesheet">
-    <link href="attendance.css" rel="stylesheet">
-  </head>
-  <body data-page="mark">
-    <div class="app">
-      <aside class="sidebar">
-        <div class="brand">CampusHub</div>
-        <nav class="nav" id="nav"></nav>
-        <div class="sidebar-foot">Teacher portal</div>
-      </aside>
-      <main class="main">
-        <header class="topbar">
-          <div class="page-name">Mark Attendance</div>
-          <div class="user">
-            <span></span>
-            <div class="avatar"></div>
-          </div>
-        </header>
-        <div class="content">
-          <div class="page-heading">
-            <div>
-              <h1>Mark Attendance</h1>
-              <div class="subtitle">Pick a course and date, set who is absent, then save. Students see the update live.</div>
-            </div>
-          </div>
-          <section class="panel">
-            <div class="inline" style="margin-bottom:16px">
-              <select id="course" aria-label="Course"></select>
-              <button class="btn small" id="prev" type="button" aria-label="Previous day">←</button>
-              <input type="date" id="date" aria-label="Date">
-              <button class="btn small" id="next" type="button" aria-label="Next day">→</button>
-              <input class="search" id="q" type="search" placeholder="Search student...">
-            </div>
-            <div class="panel-head">
-              <div class="counts" id="counts"></div>
-              <div class="toolbar"><button class="btn small" id="allP" type="button">All present</button><button class="btn small danger" id="allA" type="button">All absent</button></div>
-            </div>
-            <div id="roster"></div>
-            <div class="toolbar" style="margin-top:16px"><button class="btn primary" id="save" type="button">Save attendance</button><span class="muted" id="msg"></span></div>
-          </section>
-        </div>
-      </main>
-    </div>
-    <script defer src="api.js"></script>
-    <script defer src="teacher.js"></script>
-  </body>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Mark Attendance | CampusHub</title>
+<link href="style.css?v=3" rel="stylesheet"/>
+<link href="attendance.css?v=3" rel="stylesheet"/>
+<script src="theme.js?v=5"></script></head>
+<body data-page="mark">
+<div class="app">
+<aside class="sidebar" id="sidebar"></aside>
+<main class="main">
+<header class="topbar">
+<div class="page-name">Mark Attendance</div>
+<div class="user">
+<span></span>
+<div class="avatar"></div>
+</div>
+</header>
+<div class="content">
+<div class="page-heading">
+<div>
+<h1>Mark Attendance</h1>
+<div class="subtitle">Pick a course and date, set who is absent, then save. Students see the update live.</div>
+</div>
+</div>
+<section class="panel">
+<div class="inline" style="margin-bottom:16px">
+<select aria-label="Course" id="course"></select>
+<button aria-label="Previous day" class="btn small" id="prev" type="button">←</button>
+<input aria-label="Date" id="date" type="date"/>
+<button aria-label="Next day" class="btn small" id="next" type="button">→</button>
+<input class="search" id="q" placeholder="Search student..." type="search"/>
+</div>
+<div class="panel-head">
+<div class="counts" id="counts"></div>
+<div class="toolbar"><button class="btn small" id="allP" type="button">All present</button><button class="btn small danger" id="allA" type="button">All absent</button></div>
+</div>
+<div id="roster"></div>
+<div class="toolbar" style="margin-top:16px"><button class="btn primary" id="save" type="button">Save attendance</button><span class="muted" id="msg"></span></div>
+</section>
+</div>
+</main>
+</div>
+<script defer="" src="sidebar.js?v=3"></script><script defer="" src="avatar.js?v=3"></script><script defer="" src="api.js?v=5"></script>
+<script defer="" src="teacher.js?v=3"></script>
+</body>
 </html>
+

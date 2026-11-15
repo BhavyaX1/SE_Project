@@ -139,7 +139,7 @@
         '</div><div class="course-meta">' + esc(s.teacher) + '<br>' + s.credits + ' credits · ' + daysFor(s.id) +
         '</div><div class="course-bottom"><span class="muted">Course progress</span><strong>' + s.progress +
         '%</strong></div><div class="progress"><span style="width:' + s.progress +
-        '%"></span></div><a class="link" href="grades.html">View grades →</a></article>';
+        '%"></span></div></article>';
     }).join('');
   }
 
@@ -150,10 +150,9 @@
   }
 
   function renderChrome() {
-    var p = state.profile, initials = p.name.split(/\s+/).filter(Boolean).map(function (w) { return w[0]; })
-      .slice(0, 2).join('').toUpperCase();
-    $$('.user span').forEach(function (e) { e.textContent = p.name; });
-    $$('.user .avatar').forEach(function (e) { e.textContent = initials; });
+    var p = state.profile;
+    localStorage.setItem('name', p.name || '');
+    if (window.CampusAvatar) CampusAvatar.render(p.name);
     $$('[data-today-title]').forEach(function (e) {
       e.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
     });
@@ -305,6 +304,37 @@
   function initSettings() {
     if (!$('#profile')) return;
 
+    // Change password (Django checks the old password and validates the new one).
+    var passwordForm = $('#password-form');
+    if (passwordForm) passwordForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      var message = $('#password-message');
+      var button = passwordForm.querySelector('[type="submit"]');
+      var oldPassword = $('#old-password').value;
+      var newPassword = $('#new-password').value;
+      var confirmPassword = $('#confirm-password').value;
+      message.textContent = '';
+      if (!oldPassword || !newPassword || !confirmPassword) {
+        message.textContent = 'Fill in all password fields.'; return;
+      }
+      if (newPassword !== confirmPassword) {
+        message.textContent = 'New passwords do not match.'; return;
+      }
+      button.disabled = true;
+      try {
+        var res = await apiJson('POST', '/change-password/', {
+          old_password: oldPassword, new_password: newPassword
+        });
+        if (!res.ok) { message.textContent = errorText(res.data); return; }
+        passwordForm.reset();
+        message.textContent = 'Password changed successfully.';
+      } catch (error) {
+        message.textContent = 'Unable to change password. Try again.';
+      } finally {
+        button.disabled = false;
+      }
+    });
+
     // Profile
     var saveBtn = $('#save-profile');
     saveBtn.addEventListener('click', async function () {
@@ -327,19 +357,7 @@
       applyProfile(res.data); renderPages();
     });
 
-    // Notification switches
-    $$('.switch[data-notify]').forEach(function (sw) {
-      sw.addEventListener('click', async function () {
-        var key = sw.getAttribute('data-notify');
-        var body = {}; body['notify_' + key] = !state.prefs.notify[key];
-        var res = await apiJson('PATCH', '/profile/', body);
-        if (!res.ok) { alert(errorText(res.data)); return; }
-        applyProfile(res.data); initSettingsValues();
-      });
-    });
-
     // Editors
-    $('#add-subject').style.display = 'none';   // subjects come from your teacher
     $('#add-class').addEventListener('click', function () { editClass(); });
     $('#reset-data').addEventListener('click', async function () {
       if (!confirm('Clear your timetable and reset preferences? Your enrolled subjects stay. This cannot be undone.')) return;
@@ -368,9 +386,6 @@
     $$('[data-profile]').forEach(function (i) { i.value = state.profile[i.getAttribute('data-profile')] || ''; });
     var tf = $('[data-pref="time"]');
     if (tf) tf.value = state.prefs.time24 ? '24-hour' : '12-hour';
-    $$('.switch[data-notify]').forEach(function (sw) {
-      sw.setAttribute('aria-checked', String(!!state.prefs.notify[sw.getAttribute('data-notify')]));
-    });
   }
 
   /* ---------- Course search ---------- */

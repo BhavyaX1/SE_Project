@@ -1,31 +1,114 @@
 /* attendance.css - extra styles for the teacher portal + live attendance. Load AFTER style.css */
-[hidden] { display: none !important; }
+[hidden] {
+  display: none !important;
+}
 
-.red { background: #fbeeee; color: #a23b3b; }
+.red {
+  background: #fbeeee;
+  color: #a23b3b;
+}
 
-.inline { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; }
-.inline input, .inline select { width: auto; }
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  align-items: center;
+}
+.inline input,
+.inline select {
+  width: auto;
+}
 
 /* segmented toggle (role picker, Present / Absent) */
-.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
-.seg button { border: 0; background: #fff; color: var(--muted); padding: 8px 13px; font: inherit; cursor: pointer; }
-.seg button + button { border-left: 1px solid var(--border); }
-.seg button.on { background: var(--navy); color: #fff; }
-.seg button.on.p { background: #e8f5ed; color: #267448; }
-.seg button.on.a { background: #fbeeee; color: #a23b3b; }
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.seg button {
+  border: 0;
+  background: #fff;
+  color: var(--muted);
+  padding: 8px 13px;
+  font: inherit;
+  cursor: pointer;
+}
+.seg button + button {
+  border-left: 1px solid var(--border);
+}
+.seg button.on {
+  background: var(--navy);
+  color: #fff;
+}
+.seg button.on.p {
+  background: #e8f5ed;
+  color: #267448;
+}
+.seg button.on.a {
+  background: #fbeeee;
+  color: #a23b3b;
+}
 
-.att-row { display: flex; justify-content: space-between; align-items: center; gap: 12px;
-  padding: 10px 0; border-bottom: 1px solid var(--line); }
-.att-row:last-child { border-bottom: 0; }
-.counts { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.att-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+.att-row:last-child {
+  border-bottom: 0;
+}
+.counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
 
-.progress span.low { background: #c25b5b; }
-.dots { display: flex; flex-wrap: wrap; gap: 4px; }
-.dot { width: 12px; height: 12px; border-radius: 3px; background: #5d9a76; }
-.dot.a { background: #c25b5b; }
+.progress span.low {
+  background: #c25b5b;
+}
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: #5d9a76;
+}
+.dot.a {
+  background: #c25b5b;
+}
 
-.live { font-size: 11px; color: #267448; }
-.live::before { content: "● "; animation: pulse 1.2s infinite; }
-@keyframes pulse { 50% { opacity: .25; } }
-.flash { animation: flash 1.6s; }
-@keyframes flash { from { box-shadow: 0 0 0 2px #344766; } }
+.live {
+  font-size: 11px;
+  color: #267448;
+}
+.live::before {
+  content: "● ";
+  animation: pulse 1.2s infinite;
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+.flash {
+  animation: flash 1.6s;
+}
+@keyframes flash {
+  from {
+    box-shadow: 0 0 0 2px #344766;
+  }
+}
+
+html[data-theme="dark"] .seg button:not(.on) {
+  background: #263247;
+  color: #f3f4f6;
+}

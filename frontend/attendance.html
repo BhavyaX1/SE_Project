@@ -1,41 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width,initial-scale=1" name="viewport">
-    <title>Attendance | CampusHub</title>
-    <link href="style.css" rel="stylesheet">
-    <link href="attendance.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="app">
-      <aside class="sidebar">
-        <div class="brand">CampusHub</div>
-        <nav class="nav"><a class="" href="index.html">Dashboard</a><a class="" href="courses.html">Courses</a><a class="" href="schedule.html">Schedule</a><a class="active" href="attendance.html">Attendance</a><a class="" href="grades.html">Grades</a><a class="" href="assignments.html">Assignments</a><a class="" href="messages.html">Messages</a><a class="" href="settings.html">Settings</a></nav>
-        <div class="sidebar-foot">v0.1 skeleton</div>
-      </aside>
-      <main class="main">
-        <header class="topbar">
-          <div class="page-name">Attendance</div>
-          <div class="user">
-            <span></span>
-            <div class="avatar"></div>
-          </div>
-        </header>
-        <div class="content">
-          <div class="page-heading">
-            <div>
-              <h1>My Attendance</h1>
-              <div class="subtitle">Marked by your teachers. <span class="live" id="live">connecting…</span></div>
-            </div>
-            <div class="toolbar"><label for="req" style="margin:0">Required %</label><input id="req" type="number" min="1" max="100" value="75" style="width:90px"></div>
-          </div>
-          <div class="grid grid-3" id="att-list"></div>
-        </div>
-      </main>
-    </div>
-    <script defer src="api.js"></script>
-    <script defer src="app.js"></script>
-    <script defer src="attendance.js"></script>
-  </body>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Attendance | CampusHub</title>
+<link href="style.css?v=3" rel="stylesheet"/>
+<link href="attendance.css?v=3" rel="stylesheet"/>
+<script src="theme.js?v=5"></script></head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar"></aside>
+<main class="main">
+<header class="topbar">
+<div class="page-name">Attendance</div>
+<div class="user">
+<span></span>
+<div class="avatar"></div>
+</div>
+</header>
+<div class="content">
+<div class="page-heading">
+<div>
+<h1>My Attendance</h1>
+<div class="subtitle">Marked by your teachers. <span class="live" id="live">connecting…</span></div>
+</div>
+<div class="toolbar"><label for="req" style="margin:0">Required %</label><input id="req" max="100" min="1" style="width:90px" type="number" value="75"/></div>
+</div>
+<div class="grid grid-3" id="att-list"></div>
+</div>
+</main>
+</div>
+<script defer="" src="sidebar.js?v=3"></script><script defer="" src="avatar.js?v=3"></script><script defer="" src="api.js?v=5"></script>
+<script defer="" src="app.js?v=3"></script>
+<script defer="" src="attendance.js?v=3"></script>
+</body>
 </html>
+
