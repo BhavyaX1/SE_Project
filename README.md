@@ -252,14 +252,6 @@ Authenticated requests use the HTTP header `Authorization: Token <your-token>`.
 pipenv run python manage.py runserver 8001
 ```
 
-## Security notes
-
-- **Do not commit** `db.sqlite3`, `.env` files, Python virtual environments, or private credentials.
-- Keep `Pipfile` and `Pipfile.lock` committed for reproducible dependency installation.
-- The default SQLite setup and Django development server are for **local development**, not production deployment.
-- Set a strong `DJANGO_SECRET_KEY`, disable `DEBUG` and configure allowed hosts, HTTPS, static file serving, and token management before public deployment.
-- Removing secret files from the latest Git commit does not remove them from earlier Git history. Rotate any credentials that were previously exposed.
-
 ## Repository
 
 **Source code:** [BhavyaX1/SE_Project](https://github.com/BhavyaX1/SE_Project)
