@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Settings | CampusHub</title>
+
+    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="attendance.css?v=7">
+
+    <script src="theme.js?v=7"></script>
+
+    <style>
+        .teacher-settings {
+            display: grid;
+            grid-template-columns: 190px minmax(0, 1fr);
+            gap: 20px;
+            align-items: start;
+        }
+
+        .settings-menu {
+            display: grid;
+            gap: 5px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .settings-menu a {
+            display: block;
+            padding: 12px;
+            border-radius: 7px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .settings-menu a:hover {
+            background: var(--line);
+        }
+
+        .settings-sections {
+            display: grid;
+            gap: 20px;
+            min-width: 0;
+        }
+
+        .settings-form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .settings-form .field {
+            display: grid;
+            gap: 7px;
+        }
+
+        .settings-form input,
+        .settings-form select {
+            width: 100%;
+            max-width: 440px;
+        }
+
+        .settings-form button {
+            justify-self: start;
+        }
+
+        .settings-note {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .settings-message {
+            min-height: 20px;
+            font-size: 12px;
+        }
+
+        .settings-message.success {
+            color: #249566;
+        }
+
+        .settings-message.error {
+            color: #df5050;
+        }
+
+        @media (max-width: 750px) {
+            .teacher-settings {
+                grid-template-columns: 1fr;
+            }
+
+            .settings-menu {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SHARED SIDEBAR -->
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="main">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <div class="page-name">
+                    Teacher Settings
+                </div>
+
+                <div class="user">
+                    <span></span>
+                    <div class="avatar"></div>
+                </div>
+
+            </header>
+
+            <div class="content">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Settings</h1>
+                        <p class="subtitle">
+                            Manage your teacher profile,
+                            appearance, and account security.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="teacher-settings">
+
+                    <!-- SETTINGS MENU -->
+                    <nav class="panel settings-menu">
+                        <a href="#profile">Profile</a>
+                        <a href="#appearance">Appearance</a>
+                        <a href="#security">Security</a>
+                        <a href="#account">Account</a>
+                    </nav>
+
+                    <div class="settings-sections">
+
+                        <!-- PROFILE -->
+                        <section class="panel" id="profile">
+
+                            <div class="panel-head">
+                                <h2>Profile Information</h2>
+                                <span class="muted">Teacher</span>
+                            </div>
+
+                            <form id="profile-form" class="settings-form">
+
+                                <div class="field">
+                                    <label for="profile-name">
+                                        Full Name
+                                    </label>
+
+                                    <input type="text" id="profile-name" required>
+                                </div>
+
+                                <div class="field">
+                                    <label for="profile-email">
+                                        Email Address
+                                    </label>
+
+                                    <input type="email" id="profile-email">
+                                </div>
+
+                                <button type="submit" class="btn primary">
+                                    Save Profile
+                                </button>
+
+                                <p class="settings-message" id="profile-message" role="status">
+                                </p>
+
+                            </form>
+
+                        </section>
+
+                        <!-- APPEARANCE -->
+                        <section class="panel" id="appearance">
+
+                            <div class="panel-head">
+                                <h2>Appearance</h2>
+                            </div>
+
+                            <div class="settings-form">
+
+                                <div class="field">
+
+                                    <label for="theme-select">
+                                        Theme
+                                    </label>
+
+                                    <select id="theme-select">
+                                        <option value="light">
+                                            Light Mode
+                                        </option>
+
+                                        <option value="dark">
+                                            Dark Mode
+                                        </option>
+
+                                        <option value="system">
+                                            System Default
+                                        </option>
+                                    </select>
+
+                                </div>
+
+                                <p class="settings-note">
+                                    Your theme is saved for this
+                                    account in this browser.
+                                    It will remain selected when
+                                    you log in again.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+                        <!-- SECURITY -->
+                        <section class="panel" id="security">
+
+                            <div class="panel-head">
+                                <h2>Change Password</h2>
+                            </div>
+
+                            <form id="password-form" class="settings-form">
+
+                                <div class="field">
+                                    <label for="old-password">
+                                        Current Password
+                                    </label>
+
+                                    <input type="password" id="old-password" autocomplete="current-password" required>
+                                </div>
+
+                                <div class="field">
+                                    <label for="new-password">
+                                        New Password
+                                    </label>
+
+                                    <input type="password" id="new-password" autocomplete="new-password" required>
+                                </div>
+
+                                <div class="field">
+                                    <label for="confirm-password">
+                                        Confirm New Password
+                                    </label>
+
+                                    <input type="password" id="confirm-password" autocomplete="new-password" required>
+                                </div>
+
+                                <button type="submit" class="btn primary">
+                                    Change Password
+                                </button>
+
+                                <p class="settings-message" id="password-message" role="status">
+                                </p>
+
+                            </form>
+
+                        </section>
+
+                        <!-- ACCOUNT -->
+                        <section class="panel" id="account">
+
+                            <div class="panel-head">
+                                <h2>Account</h2>
+                            </div>
+
+                            <p class="settings-note">
+                                Log out of your current teacher account.
+                            </p>
+
+                            <button class="btn" id="logout-button" type="button">
+                                Log Out
+                            </button>
+
+                        </section>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="sidebar.js?v=7"></script>
+    <script src="avatar.js?v=7"></script>
+    <script src="api.js?v=7"></script>
+
+    <script>
+        (function () {
+            "use strict";
+
+            const $ = selector => document.querySelector(selector);
+
+            // Only authenticated teachers can use this page
+            const token = localStorage.getItem("token");
+            const role = localStorage.getItem("role");
+
+            if (!token) {
+                window.location.replace("login.html");
+                return;
+            }
+
+            if (role !== "teacher") {
+                window.location.replace("index.html");
+                return;
+            }
+
+            function showMessage(selector, text, success) {
+                const element = $(selector);
+
+                element.textContent = text;
+                element.className = "settings-message " +
+                    (success ? "success" : "error");
+            }
+
+            // ===================================
+            // LOAD TEACHER PROFILE
+            // ===================================
+
+            async function loadProfile() {
+
+                const result = await apiJson("GET", "/profile/");
+
+                if (!result.ok) {
+                    showMessage(
+                        "#profile-message",
+                        errorText(result.data),
+                        false
+                    );
+                    return;
+                }
+
+                if (result.data.role !== "teacher") {
+                    window.location.replace("index.html");
+                    return;
+                }
+
+                $("#profile-name").value =
+                    result.data.name || "";
+
+                $("#profile-email").value =
+                    result.data.email || "";
+
+                // Update avatar using actual profile name
+                if (result.data.name) {
+                    localStorage.setItem("name", result.data.name);
+
+                    if (window.CampusAvatar) {
+                        window.CampusAvatar.render(result.data.name);
+                    }
+                }
+            }
+
+            // ===================================
+            // SAVE PROFILE
+            // ===================================
+
+            $("#profile-form").addEventListener(
+                "submit",
+                async function (event) {
+
+                    event.preventDefault();
+
+                    const name = $("#profile-name").value.trim();
+                    const email = $("#profile-email").value.trim();
+
+                    if (!name) {
+                        showMessage(
+                            "#profile-message",
+                            "Please enter your full name.",
+                            false
+                        );
+                        return;
+                    }
+
+                    const button = this.querySelector(
+                        "button[type='submit']"
+                    );
+
+                    button.disabled = true;
+
+                    try {
+                        const result = await apiJson(
+                            "PATCH",
+                            "/profile/",
+                            { name, email }
+                        );
+
+                        if (!result.ok) {
+                            showMessage(
+                                "#profile-message",
+                                errorText(result.data),
+                                false
+                            );
+                            return;
+                        }
+
+                        const savedName = result.data.name || name;
+
+                        localStorage.setItem("name", savedName);
+
+                        if (window.CampusAvatar) {
+                            window.CampusAvatar.render(savedName);
+                        }
+
+                        showMessage(
+                            "#profile-message",
+                            "Profile updated successfully.",
+                            true
+                        );
+
+                    } catch (error) {
+                        showMessage(
+                            "#profile-message",
+                            "Unable to save profile.",
+                            false
+                        );
+                    } finally {
+                        button.disabled = false;
+                    }
+                }
+            );
+
+            // ===================================
+            // CHANGE PASSWORD
+            // ===================================
+
+            $("#password-form").addEventListener(
+                "submit",
+                async function (event) {
+
+                    event.preventDefault();
+
+                    const oldPassword =
+                        $("#old-password").value;
+
+                    const newPassword =
+                        $("#new-password").value;
+
+                    const confirmPassword =
+                        $("#confirm-password").value;
+
+                    if (newPassword !== confirmPassword) {
+                        showMessage(
+                            "#password-message",
+                            "New passwords do not match.",
+                            false
+                        );
+                        return;
+                    }
+
+                    const button = this.querySelector(
+                        "button[type='submit']"
+                    );
+
+                    button.disabled = true;
+
+                    try {
+                        const result = await apiJson(
+                            "POST",
+                            "/change-password/",
+                            {
+                                old_password: oldPassword,
+                                new_password: newPassword
+                            }
+                        );
+
+                        if (!result.ok) {
+                            showMessage(
+                                "#password-message",
+                                errorText(result.data),
+                                false
+                            );
+                            return;
+                        }
+
+                        this.reset();
+
+                        showMessage(
+                            "#password-message",
+                            "Password changed successfully.",
+                            true
+                        );
+
+                    } catch (error) {
+                        showMessage(
+                            "#password-message",
+                            "Unable to change password.",
+                            false
+                        );
+                    } finally {
+                        button.disabled = false;
+                    }
+                }
+            );
+
+            // ===================================
+            // LOGOUT
+            // ===================================
+
+            $("#logout-button").addEventListener(
+                "click",
+                function () {
+                    logout();
+                }
+            );
+
+            // Load profile when page opens
+            loadProfile();
+
+        })();
+    </script>
+
+</body>
+
+</html>
